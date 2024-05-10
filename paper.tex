@@ -1,0 +1,172 @@
+\documentclass[runningheads]{llncs}
+\usepackage[T1]{fontenc}
+% \usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[misc]{ifsym}
+\newcommand{\corr}{(\Letter)}
+% N.B.: do not change anything above this line. If you require additional packages, please load them directly after this line.
+\usepackage{mwe}
+% N.B.: you may delete the preceding line. It is used to display an example image in this template.
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%\documentclass{article}
+\usepackage{textcase}
+\usepackage{dirtytalk}
+\usepackage{etoolbox}
+%\usepackage[nonatbib]{nips_2017}
+%\usepackage{nips_2017}
+%\bibliographystyle{unsrt} 
+%\bibliographystyle{named}
+% Use the postscript times font!
+\usepackage{times}
+\usepackage{soul}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+%\usepackage[small]{caption}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\urlstyle{same}
+\usepackage{xcolor}
+\usepackage{yhmath}
+\usepackage{bm}
+\usepackage{bbm}
+
+\graphicspath{ {figures/} }
+\usepackage{caption}
+\usepackage{subcaption}
+
+% These are are recommended to typeset listings but not required. See the subsubsection on listing. Remove this block if you don't have listings in your paper.
+\usepackage{newfloat}
+\usepackage{listings}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+
+
+%\documentclass{article}
+\usepackage{textcase}
+\usepackage{dirtytalk}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{mymacros}
+\usepackage{tikz}
+\usetikzlibrary{positioning,decorations.pathreplacing,shapes}
+
+\newcommand{\argmin}{\arg\!\min}
+\newcommand{\argmax}{\arg\!\max}
+% \nocite{*}
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+% \usepackage{thmtools,thm-restate}
+
+\def\I{\mathrm{I}}
+
+% the following package is optional:
+%\usepackage{latexsym}
+
+% See https://www.overleaf.com/learn/latex/theorems_and_proofs
+% for a nice explanation of how to define new theorems, but keep
+% in mind that the amsthm package is already included in this
+% template and that you must *not* alter the styling.
+% \newtheorem{observation}{Observation}
+\newtheorem{observation}{Observation}
+% \newtheorem{prop}{Proposition}
+%\newtheorem{definition}{Definition}
+%\newtheorem{lemma}{Lemma}
+
+% Following comment is from ijcai97-submit.tex:
+% The preparation of these files was supported by Schlumberger Palo Alto
+% Research, AT\&T Bell Laboratories, and Morgan Kaufmann Publishers.
+% Shirley Jowell, of Morgan Kaufmann Publishers, and Peter F.
+% Patel-Schneider, of AT\&T Bell Laboratories collaborated on their
+% preparation.
+
+% These instructions can be modified and used in other conferences as long
+% as credit to the authors and supporting agencies is retained, this notice
+% is not changed, and further modification or reuse is not restricted.
+% Neither Shirley Jowell nor Peter F. Patel-Schneider can be listed as
+% contacts for providing assistance without their prior permission.
+
+% To use for other conferences, change references to files and the
+% conference appropriate and use other authors, contacts, publishers, and
+% organizations.
+% Also change the deadline and address for returning papers and the length and
+% page charge instructions.
+% Put where the files are available in the appropriate places.
+
+% PDF Info Is REQUIRED.
+% Please **do not** include Title and Author information
+% \pdfinfo{
+% /TemplateVersion (IJCAI.2022.0)
+% }
+
+% \title{Relational Block Models}
+
+% % Single author syntax
+% \author{
+%     % Author Name
+%     % \affiliations
+%     % Affiliation
+%     % \emails
+%     % pcchair@ijcai-22.org
+% }
+
+% Multiple author syntax (remove the single-author syntax above and the \iffalse ... \fi here)
+% Check the ijcai22-multiauthor.tex file for detailed instructions
+
+\usepackage{thmtools}
+\usepackage{thm-restate}
+
+\begin{document}
+%\title{Projectivity in the Two-Variable Fragment of \\ Markov Logic Networks}
+\title{Fundamental Problems in Statistical Relational AI}
+
+% \titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+% \author{Paper ID: 1186}
+\author{Sagar Malhotra}
+
+
+%
+%\authorrunning{F. Chen  et al.}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+ \institute{TU Wien, Austria }
+ 
+% % %
+\maketitle              % typeset the header of the contribution
+% \input{00_abstract}
+\input{01_introduction}
+\input{02_Target_Audience}
+\input{03_Tutorial_Outline}
+% \input{02_related}
+% \input{03_background}
+% \input{04_MLN}
+% \input{05_Domain_Size_Gen}
+% \input{0x_experiments}
+% \input{06_rbm}
+%\input{Assymptotic_Probabilities}
+%\input{04_mln2rbm}
+% \input{07_learning}
+%\input{06_related}
+% \input{08_conclusion}
+
+%% The file named.bst is a bibliography style file for BibTeX 0.99c
+
+
+% \bibliographystyle{splncs04}
+\bibliographystyle{unsrt}
+\bibliography{main}
+% \input{appendix}
+\end{document}

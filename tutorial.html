@@ -1,0 +1,169 @@
+<p><strong>Presenters:</strong> Sagar Malhotra</p>
+<p><strong>Email:</strong> sagar.malhotra@tuwien.ac.at</p>
+<p><strong>Proposed Duration:</strong> Half-Day Tutorial
+<strong></strong></p>
+<h1 id="introduction">Introduction</h1>
+<p>Relational data is characterized by the rich structure it encodes in
+the dependencies between the individual entities of a given domain.
+Statistical Relational AI (StarAI) combines first-order logic and
+probability to learn and reason over relational domains by creating
+parametric probability distributions over relational structures <span
+class="citation" data-cites="SRL_LISA SRL_LUC"></span>. StarAI models
+can succinctly represent the complex dependencies in relational data and
+admit learning and inference under uncertainty. Such expressivity allows
+for StarAI models to be used in various applications that simultaneously
+require knowledge representation, learning, reasoning and uncertainty
+quantification. These models have been extensively used in domains like
+social network analysis <span class="citation"
+data-cites="Problog"></span>, synthesizing biological networks <span
+class="citation" data-cites="Brouard2013-iw"></span> and for various
+problems on knowledge graphs <span class="citation"
+data-cites="bellomarini2022swift Nickel2015ARO"></span>. Furthermore,
+many widely used Neuro-Symbolic approaches for integrating neural
+networks with symbolic methods have been obtained as neural extensions
+of StarAI models <span class="citation"
+data-cites="belle2023statistical DeepProblog jaeger marra2020neural"></span>
+. A key feature of StarAI models is the inherent interpretability and
+explainability. These features have lead to significant interest in
+applying StarAI models to safety critical areas like Healthcare <span
+class="citation" data-cites="medicine natarajan2017markov"></span> and
+for analyzing complex social <span class="citation"
+data-cites="social zhang2014identifying"></span> and biological systems
+<span class="citation"
+data-cites="riedel2009markov sakhanenko2010markov"></span>.</p>
+<p>The need for using StarAI models at scale is consistently rising with
+the ever-increasing quantities of relational data. However, StarAI
+models are significantly limited when it comes to the
+<strong>tractability</strong> of learning and inference. This limitation
+emerges from the intractability of Weighted First Order Model Counting
+(WFOMC) <span class="citation" data-cites="Symmetric_Weighted"></span>,
+as both learning and inference in many StarAI models can be reduced to
+instances of WFOMC. Furthermore, fundamental properties expected of
+sound statistical models, like <strong>consistency</strong> of parameter
+estimation, do not hold for StarAI models.</p>
+<p>In this tutorial, we will focus on both tractability and consistency
+of StarAI models from a foundational perspective. The tutorial will be
+divided into two focus-topic. First focus-topic will be on tractable
+WFOMC, where we will discuss the recent developments in the fragments of
+first order logic that admit tractable WFOMC. In the second focus-topic,
+we will discuss consistency of parameter estimation and generalization
+behavior of StarAI models across different domain sizes. The learning
+goal of the tutorial would be to convey state-of-the-art knowledge of
+foundations of StarAI models, the existing open-problems, and to
+motivate further applications of recently introduced theoretical
+results.</p>
+<h1 id="target-audience-prerequisites-and-learning-goals">Target
+Audience, Prerequisites and Learning Goals</h1>
+<p>Recent years have seen increasing interest in Relational AI within
+the KR community. This interest is reflected in consistent StarAI
+related events in previous editions of KR, including David Poole’s 2020
+keynote speech on StarAI, and the tutorial of Braun, Gehrke and Wilhelm
+at KR 2023. In this tutorial, we will bring to attention some
+foundational problems in StarAI. Hence, our tutorial will be of interest
+to the existing StarAI community at KR. Furthermore, our tutorial is
+also interesting to the community of complexity analysis of reasoning.
+As it will contain a thorough introduction to key ideas behind tractable
+WFOMC. We believe that this tutorial can be attended by anyone with
+basic knowledge of probability and first order logic.</p>
+<p>The attendees will learn about the relation between problems like:
+model counting and probabilistic inference; the complexity of model
+counting problems; and about fragments of first order logic that admit
+tractable WFOMC. The tutorial will guide the audience through some of
+the key combinatorial ideas behind tractable WFOMC. The tutorial will
+also discuss the current state-of-the-art first-order model counters,
+their applications and their inefficiencies. The audience will be made
+aware of both theoretical and practical open-problems, whose resolution
+would lead to efficient probabilistic inference and learning in StarAI
+models.</p>
+<p>The attendees will also be introduced to the problem of consistency
+of inference, and the recently developed theories of StarAI models that
+admit consistent parameter estimation. Such models, also known as
+<em>projective models</em>, open up a vast array of new avenues in
+StarAI, and the tutorial will provide the audience with the most recent
+developments. The audience will gain deep understanding of present
+theoretical models of projectivity and their recent applications.
+Finally, we will also discuss some recent results on domain-size
+generalization of non-projective models, and discuss how simple
+techniques like parameter re-scaling and regularization lead to provably
+better generalization across domain sizes.</p>
+<h1 id="tutorial-outline">Tutorial Outline</h1>
+<p>The tutorial will be divided into three parts:</p>
+<h3 id="introduction-1">Introduction</h3>
+<p>[30 Minutes] We will first discuss some background on relational data
+and probability distributions on relational structures. We will
+formalize a general notion of probabilistic inference on relational
+data, and show how it maps to WFOMC for StarAI models like Markov Logic
+Networks and Problog. We will provide some initial examples, where
+tractability and inconsistency of inference can be major hurdles in real
+life applications.</p>
+<h3 id="tractability">Tractability</h3>
+<p>[60 Minutes] This session will focus on conveying the key recent
+results in the field of WFOMC. We will first introduce the notion of
+types and tables in first order logic. We will then provide a thorough
+introduction to WFOMC in the universally quantified fragment of first
+order logic with two variables, providing a closed form formula for
+WFOMC of any universally quantified two-variable formula <span
+class="citation" data-cites="Symmetric_Weighted"></span>. We will then
+extend this result to admit existential quantifiers using the principle
+of inclusion-exclusion <span class="citation"
+data-cites="broeck2013 MalhotraS22"></span>. Finally, we will extend
+these results to admit cardinality constraints and counting quantifiers
+<span class="citation" data-cites="kuzelka2020weighted"></span>. The
+tutorial will convey key algorithmic and combinatorial ideas <span
+class="citation" data-cites="MalhotraS22"></span> that will bring the
+audience a deep understanding of the state-of-the-art WFOMC. We will
+introduce key open problems in this area, ranging from scalability of
+existing model counters <span class="citation"
+data-cites="pmlr-v161-bremen21a"></span> to fine-grain analysis of known
+(potentially sub-optimal) upper-bounds on complexity of WFOMC. Finally,
+we will give a brief overview of recent results that allow for efficient
+model counting in first order logic fragments, with graph-theoretic
+constraints <span class="citation"
+data-cites="LI_Tree Malhotra2023LiftedIB"></span>. Such constraints,
+such as axiomatising a relation to represent a tree, forest, a connected
+graph etc., significantly extend the tractable fragment of WFOMC.</p>
+<h3 id="consistency">Consistency</h3>
+<p>[60 Minutes] We will begin by introducing recent results <span
+class="citation" data-cites="Projectivity_Rinaldo"></span> that have
+shown that a large variety of widely used probabilistic models,
+encompassing almost all of existing StarAI models <span class="citation"
+data-cites="Projectivity_first"></span>, do not admit basic
+<em>consistency</em> requirements expected of sound statistical models.
+The lack of such consistency conditions means that StarAI models do not
+admit consistency of parameter estimation, i.e., as you see more and
+more data, it is not true that your parameters converge to the true
+value of the model parameters. Such inherent inconsistencies in StarAI
+models make them hard to be used across varying domain sizes <span
+class="citation" data-cites="DA_MLN"></span>. We will discuss recent
+theoretical developments in identifying fragments of StarAI models, that
+admit consistency of parameter estimation <span class="citation"
+data-cites="ECML_PROJ Felix_Weit"></span>. These fragments also admit
+tractable inference in the strongest theoretical sense, as inference
+complexity is independent of the domain size. We will discuss the
+recently introduced rich theoretical framework for projective models
+<span class="citation" data-cites="ijcai2020p591"></span>, and the
+recent developments in their practical implementation and applications
+<span class="citation" data-cites="jaeger2023a"></span>. We will
+especially focus on the vast array of potential applications of these
+models in problems like reasoning over large scale data and random
+relational structure generation <span class="citation"
+data-cites="jaeger2023a"></span>. Finally, we will look into recent
+developments in understanding generalization properties of StarAI models
+that do not admit consistent parameter estimation <span class="citation"
+data-cites="DA_MLN chen2024understanding"></span>, and how simple
+regularization and re-scaling approaches can lead to provably improved
+domain-size generalization in practice.</p>
+<p>We will close the session with a discussion on open problems and
+potential new applications in this domain.</p>
+<h1 id="presenter-bio">Presenter Bio</h1>
+<p>Sagar Malhotra is a PostDoc at TU Wien, hosted by Prof. Thomas
+G<span>ä</span>rtner. He obtained his PhD in 2023 from the university of
+Trento on under the supervision of Luciano Serafini. During his PhD he
+worked on novel fragments of first order logic that admit tractable
+WFOMC <span class="citation"
+data-cites="MalhotraS22 Malhotra2023LiftedIB"></span>. He also worked on
+consistency of inference of Markov Logic Networks <span class="citation"
+data-cites="ECML_PROJ"></span>. Recently, he has been interested in
+quantifying domain-size generalization of StarAI models which do not
+admit consistent parameter estimation <span class="citation"
+data-cites="chen2024understanding"></span>.</p>

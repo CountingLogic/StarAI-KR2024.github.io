@@ -1,0 +1,13 @@
+
+\begin{abstract}
+We study generalization  behavior of Markov Logic Networks (MLNs) across relational structures of different sizes. Multiple works have noticed that MLNs, learned on a given domain, generalize poorly across domains of different sizes. This behavior emerges from a lack of internal consistency within an MLN when used across different domain sizes. In this paper, we quantify this inconsistency and bound it in terms of the variance of the MLN parameters. The parameter variance also bounds the KL divergence between an MLN’s marginal distributions taken from different domain sizes. We use these bounds to show that maximizing the data log-likelihood while simultaneously minimizing the parameter variance corresponds to two natural notions of generalization across domain sizes. Our theoretical results apply to Exponential Random Graphs and other Markov network based relational models. Finally, we observe that solutions known to decrease the variance of the MLN parameters, like regularization and Domain-Size Aware MLNs, increase the internal consistency of the MLNs. We empirically verify our results on four different datasets, with different methods to control parameter variance, showing that controlling parameter variance leads to better generalization. 
+
+
+
+% In recent works, connections have emerged between  domain size dependence, lifted inference and learning from sub-sampled domains. The central idea to these works is the notion of  \emph{projectivity}. The probability distributions ascribed by projective models render the marginal probabilities of sub-structures independent of the domain cardinality. Hence, projective models admit efficient marginal inference, removing any dependence on the domain size. Furthermore, projective models potentially allow efficient and consistent parameter learning from sub-sampled domains. In this paper, we characterize the necessary and sufficient conditions for a two-variable MLN to be projective. We then isolate a special model in this class of MLNs, namely Relational Block Model (RBM). We show that, in terms of data likelihood maximization, RBM is the best possible projective MLN in the two-variable fragment. Finally, we show that RBMs also admit consistent parameter learning over sub-sampled domains. 
+\end{abstract}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:

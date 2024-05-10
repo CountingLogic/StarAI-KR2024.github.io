@@ -1,0 +1,209 @@
+\begin{thebibliography}{10}
+
+\bibitem{SRL_LISA}
+Lise Getoor and Ben Taskar.
+\newblock {\em Introduction to Statistical Relational Learning (Adaptive
+  Computation and Machine Learning)}.
+\newblock The MIT Press, 2007.
+
+\bibitem{SRL_LUC}
+Luc~De Raedt, Kristian Kersting, Sriraam Natarajan, and David Poole.
+\newblock {\em Statistical Relational Artificial Intelligence: Logic,
+  Probability, and Computation}.
+\newblock Synthesis Lectures on Artificial Intelligence and Machine Learning.
+  Morgan {\&} Claypool Publishers, 2016.
+
+\bibitem{Problog}
+Luc De~Raedt, Angelika Kimmig, and Hannu Toivonen.
+\newblock Problog: A probabilistic prolog and its application in link
+  discovery.
+\newblock In {\em Proceedings of the 20th International Joint Conference on
+  Artifical Intelligence}, IJCAI'07, page 2468–2473, San Francisco, CA, USA,
+  2007. Morgan Kaufmann Publishers Inc.
+
+\bibitem{Brouard2013-iw}
+C{\'e}line Brouard, Christel Vrain, Julie Dubois, David Castel, Marie-Anne
+  Debily, and Florence d'Alch{\'e} Buc.
+\newblock Learning a markov logic network for supervised gene regulatory
+  network inference.
+\newblock {\em BMC Bioinformatics}, 14:273, September 2013.
+
+\bibitem{bellomarini2022swift}
+Luigi Bellomarini, Eleonora Laurenza, Emanuel Sallinger, and Evgeny Sherkhonov.
+\newblock Swift markov logic for probabilistic reasoning on knowledge graphs,
+  2022.
+
+\bibitem{Nickel2015ARO}
+Maximilian Nickel, Kevin~P. Murphy, Volker Tresp, and Evgeniy Gabrilovich.
+\newblock A review of relational machine learning for knowledge graphs.
+\newblock {\em Proceedings of the IEEE}, 104:11--33, 2015.
+
+\bibitem{belle2023statistical}
+Vaishak Belle.
+\newblock Statistical relational learning and neuro-symbolic ai: what does
+  first-order logic offer?, 2023.
+
+\bibitem{DeepProblog}
+Robin Manhaeve, Sebastijan Dumancic, Angelika Kimmig, Thomas Demeester, and
+  Luc~De Raedt.
+\newblock Deepproblog: neural probabilistic logic programming.
+\newblock In {\em Proceedings of the 32nd International Conference on Neural
+  Information Processing Systems}, NIPS'18, page 3753–3763, Red Hook, NY,
+  USA, 2018. Curran Associates Inc.
+
+\bibitem{jaeger}
+Manfred Jaeger.
+\newblock {Learning and Reasoning with Graph Data: Neural and
+  Statistical-Relational Approaches}.
+\newblock In Camille Bourgaux, Ana Ozaki, and Rafael Pe\~{n}aloza, editors,
+  {\em International Research School in Artificial Intelligence in Bergen (AIB
+  2022)}, volume~99 of {\em Open Access Series in Informatics (OASIcs)}, pages
+  5:1--5:42, Dagstuhl, Germany, 2022. Schloss Dagstuhl -- Leibniz-Zentrum
+  f{\"u}r Informatik.
+
+\bibitem{marra2020neural}
+Giuseppe Marra and Ond{\v{r}}ej Ku{\v{z}}elka.
+\newblock Neural markov logic networks, 2020.
+
+\bibitem{medicine}
+Sriraam Natarajan, Kristian Kersting, Tushar Khot, and Jude Shavlik.
+\newblock {\em Boosted Statistical Relational Learners: From Benchmarks to
+  Data-Driven Medicine}.
+\newblock Springer Publishing Company, Incorporated, 2015.
+
+\bibitem{natarajan2017markov}
+Sriraam Natarajan, Vishal Bangera, Tushar Khot, Jose Picado, Anurag Wazalwar,
+  Vitor~Santos Costa, David Page, and Michael Caldwell.
+\newblock Markov logic networks for adverse drug event extraction from text.
+\newblock {\em Knowledge and information systems}, 51:435--457, 2017.
+
+\bibitem{social}
+Haiquan Chen, Wei-Shinn Ku, Haixun Wang, Liang Tang, and Min-Te Sun.
+\newblock Scaling up markov logic probabilistic inference for social graphs.
+\newblock {\em IEEE Transactions on Knowledge and Data Engineering},
+  29(2):433--445, 2017.
+
+\bibitem{zhang2014identifying}
+Weizhe Zhang, Xiaoqiang Li, Hui He, Xing Wang, et~al.
+\newblock Identifying network public opinion leaders based on markov logic
+  networks.
+\newblock {\em The scientific world journal}, 2014, 2014.
+
+\bibitem{riedel2009markov}
+Sebastian Riedel, Hong-Woo Chun, Toshihisa Takagi, and Jun’ichi Tsujii.
+\newblock A markov logic approach to bio-molecular event extraction.
+\newblock In {\em Proceedings of the BioNLP 2009 Workshop Companion Volume for
+  Shared Task}, pages 41--49, 2009.
+
+\bibitem{sakhanenko2010markov}
+Nikita~A Sakhanenko and David~J Galas.
+\newblock Markov logic networks in the analysis of genetic data.
+\newblock {\em Journal of Computational Biology}, 17(11):1491--1508, 2010.
+
+\bibitem{Symmetric_Weighted}
+Paul Beame, Guy~Van den Broeck, Eric Gribkoff, and Dan Suciu.
+\newblock Symmetric weighted first-order model counting.
+\newblock In Tova Milo and Diego Calvanese, editors, {\em Proceedings of the
+  34th {ACM} Symposium on Principles of Database Systems, {PODS} 2015,
+  Melbourne, Victoria, Australia, May 31 - June 4, 2015}, pages 313--328.
+  {ACM}, 2015.
+
+\bibitem{broeck2013}
+Guy~Van den Broeck, Wannes Meert, and Adnan Darwiche.
+\newblock Skolemization for weighted first-order model counting.
+\newblock In Chitta Baral, Giuseppe~De Giacomo, and Thomas Eiter, editors, {\em
+  Principles of Knowledge Representation and Reasoning: Proceedings of the
+  Fourteenth International Conference, {KR} 2014, Vienna, Austria, July 20-24,
+  2014}. {AAAI} Press, 2014.
+
+\bibitem{MalhotraS22}
+Sagar Malhotra and Luciano Serafini.
+\newblock Weighted model counting in {FO2} with cardinality constraints and
+  counting quantifiers: {A} closed form formula.
+\newblock In {\em Thirty-Sixth {AAAI} Conference on Artificial Intelligence,
+  {AAAI} 2022, Thirty-Fourth Conference on Innovative Applications of
+  Artificial Intelligence, {IAAI} 2022, The Twelveth Symposium on Educational
+  Advances in Artificial Intelligence, {EAAI} 2022 Virtual Event, February 22 -
+  March 1, 2022}, pages 5817--5824. {AAAI} Press, 2022.
+
+\bibitem{kuzelka2020weighted}
+Ondrej Kuzelka.
+\newblock Weighted first-order model counting in the two-variable fragment with
+  counting quantifiers.
+\newblock {\em J. Artif. Intell. Res.}, 70:1281--1307, 2021.
+
+\bibitem{pmlr-v161-bremen21a}
+Timothy van Bremen and Ond\v{r}ej Ku\v{z}elka.
+\newblock Faster lifting for two-variable logic using cell graphs.
+\newblock In Cassio de~Campos and Marloes~H. Maathuis, editors, {\em
+  Proceedings of the Thirty-Seventh Conference on Uncertainty in Artificial
+  Intelligence}, volume 161 of {\em Proceedings of Machine Learning Research},
+  pages 1393--1402. PMLR, 27--30 Jul 2021.
+
+\bibitem{LI_Tree}
+Timothy van Bremen and Ondřej Kuželka.
+\newblock {Lifted Inference with Tree Axioms}.
+\newblock In {\em {Proceedings of the 18th International Conference on
+  Principles of Knowledge Representation and Reasoning}}, pages 599--608, 11
+  2021.
+
+\bibitem{Malhotra2023LiftedIB}
+Sagar Malhotra, Davide Bizzaro, and Luciano Serafini.
+\newblock Lifted inference beyond first-order logic.
+\newblock {\em ArXiv}, abs/2308.11738, 2023.
+
+\bibitem{Projectivity_Rinaldo}
+Cosma~Rohilla Shalizi and Alessandro Rinaldo.
+\newblock Consistency under sampling of exponential random graph models.
+\newblock {\em Annals of statistics}, 41 2:508--535, 2013.
+
+\bibitem{Projectivity_first}
+Manfred Jaeger and Oliver Schulte.
+\newblock Inference, learning, and population size: Projectivity for {SRL}
+  models.
+\newblock {\em CoRR}, abs/1807.00564, 2018.
+
+\bibitem{DA_MLN}
+Happy Mittal, Ayush Bhardwaj, Vibhav Gogate, and Parag Singla.
+\newblock Domain-size aware markov logic networks.
+\newblock In Kamalika Chaudhuri and Masashi Sugiyama, editors, {\em The 22nd
+  International Conference on Artificial Intelligence and Statistics, {AISTATS}
+  2019, 16-18 April 2019, Naha, Okinawa, Japan}, volume~89 of {\em Proceedings
+  of Machine Learning Research}, pages 3216--3224. {PMLR}, 2019.
+
+\bibitem{ECML_PROJ}
+Sagar Malhotra and Luciano Serafini.
+\newblock On projectivity in markov logic networks.
+\newblock In Massih-Reza Amini, St{\'e}phane Canu, Asja Fischer, Tias Guns,
+  Petra Kralj~Novak, and Grigorios Tsoumakas, editors, {\em Machine Learning
+  and Knowledge Discovery in Databases}, pages 223--238, Cham, 2023. Springer
+  Nature Switzerland.
+
+\bibitem{Felix_Weit}
+Felix~Q. Weitk{\"{a}}mper.
+\newblock An asymptotic analysis of probabilistic logic programming, with
+  implications for expressing projective families of distributions.
+\newblock {\em Theory Pract. Log. Program.}, 21(6):802--817, 2021.
+
+\bibitem{ijcai2020p591}
+Manfred Jaeger and Oliver Schulte.
+\newblock A complete characterization of projectivity for statistical
+  relational models.
+\newblock In Christian Bessiere, editor, {\em Proceedings of the Twenty-Ninth
+  International Joint Conference on Artificial Intelligence, {IJCAI-20}}, pages
+  4283--4290. International Joint Conferences on Artificial Intelligence
+  Organization, 7 2020.
+\newblock Main track.
+
+\bibitem{jaeger2023a}
+Manfred Jaeger, Antonio Longa, Steve Azzolin, Oliver Schulte, and Andrea
+  Passerini.
+\newblock A simple latent variable model for graph learning and inference.
+\newblock In {\em The Second Learning on Graphs Conference}, 2023.
+
+\bibitem{chen2024understanding}
+Florian Chen, Felix Weitkämper, and Sagar Malhotra.
+\newblock Understanding domain-size generalization in markov logic networks,
+  2024.
+
+\end{thebibliography}

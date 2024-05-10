@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
+<head><title>Fundamental Problems in Statistical Relational AI</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (https://tug.org/tex4ht/)" /> 
+<!-- xhtml,bib-,charset=utf-8,html --> 
+<meta name="src" content="paper.tex" /> 
+<link rel="stylesheet" type="text/css" href="paper.css" /> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                  
+
+                                                                  
+   <a 
+ id="likesection.1"></a><a 
+ id="x1-2r1"></a>
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+
+<h2 class="titleHead">Fundamental Problems in Statistical Relational AI</h2>
+<div class="author" >Sagar Malhotra</div>
+<div class="institute"><span 
+class="ptmr8t-x-x-90">TU Wien, Austria </span></div>
+<a 
+ id="Q1-1-1"></a>
+<a 
+ id="Q1-1-2"></a>
+   </div>
+<!--l. 4--><p class="indent" >   <span 
+class="ptmb8t-">Presenters: </span>Sagar Malhotra
+</p><!--l. 6--><p class="indent" >   <span 
+class="ptmb8t-">Email: </span>sagar.malhotra@tuwien.ac.at
+</p><!--l. 8--><p class="indent" >   <span 
+class="ptmb8t-">Proposed Duration: </span>Half-Day Tutorial at KR 2024
+</p>
+   <h3 class="sectionHead"><span class="titlemark">1    </span> <a 
+ id="x1-10001"></a>Introduction</h3>
+<!--l. 13--><p class="noindent" >Relational data is characterized by the rich structure it encodes in the dependencies between
+the individual entities of a given domain. Statistical Relational AI (StarAI) combines
+ﬁrst-order logic and probability to learn and reason over relational domains by creating
+parametric probability distributions over relational structures <span class="cite">[<a 
+href="#XSRL_LISA">1</a>, <a 
+href="#XSRL_LUC">2</a>]</span>. StarAI models can
+succinctly represent the complex dependencies in relational data and admit learning and
+inference under uncertainty. Such expressivity allows for StarAI models to be used in
+various applications that simultaneously require knowledge representation, learning,
+reasoning and uncertainty quantiﬁcation. These models have been extensively used in
+domains like social network analysis <span class="cite">[<a 
+href="#XProblog">3</a>]</span>, synthesizing biological networks <span class="cite">[<a 
+href="#XBrouard2013-iw">4</a>]</span> and for
+various problems on knowledge graphs <span class="cite">[<a 
+href="#Xbellomarini2022swift">5</a>, <a 
+href="#XNickel2015ARO">6</a>]</span>. Furthermore, many widely used
+Neuro-Symbolic approaches for integrating neural networks with symbolic methods have
+been obtained as neural extensions of StarAI models <span class="cite">[<a 
+href="#Xbelle2023statistical">7</a>, <a 
+href="#XDeepProblog">8</a>, <a 
+href="#Xjaeger">9</a>, <a 
+href="#Xmarra2020neural">10</a>]</span> . A key feature of
+StarAI models is the inherent interpretability and explainability. These features have
+lead to signiﬁcant interest in applying StarAI models to safety critical areas like
+Healthcare <span class="cite">[<a 
+href="#Xmedicine">11</a>, <a 
+href="#Xnatarajan2017markov">12</a>]</span> and for analyzing complex social <span class="cite">[<a 
+href="#Xsocial">13</a>, <a 
+href="#Xzhang2014identifying">14</a>]</span> and biological systems
+<span class="cite">[<a 
+href="#Xriedel2009markov">15</a>, <a 
+href="#Xsakhanenko2010markov">16</a>]</span>.
+</p><!--l. 16--><p class="indent" >   The need for using StarAI models at scale is consistently rising with the ever-increasing
+quantities of relational data. However, StarAI models are signiﬁcantly limited when it comes
+to the <span 
+class="ptmb8t-">tractability </span>of learning and inference. This limitation emerges from the intractability of
+Weighted First Order Model Counting (WFOMC) <span class="cite">[<a 
+href="#XSymmetric_Weighted">17</a>]</span>, as both learning and inference in
+many StarAI models can be reduced to instances of WFOMC. Furthermore, fundamental
+properties expected of sound statistical models, like <span 
+class="ptmb8t-">consistency </span>of parameter estimation, do
+not hold for StarAI models.
+</p><!--l. 19--><p class="indent" >   In this tutorial, we will focus on both tractability and consistency of StarAI models from a
+foundational perspective. The tutorial will be divided into two focus-topic. First focus-topic
+will be on tractable WFOMC, where we will discuss the recent developments in the fragments
+                                                                  
+
+                                                                  
+of ﬁrst order logic that admit tractable WFOMC. In the second focus-topic, we will
+discuss consistency of parameter estimation and generalization behavior of StarAI
+models across diﬀerent domain sizes. The learning goal of the tutorial would be to
+convey state-of-the-art knowledge of foundations of StarAI models, the existing
+open-problems, and to motivate further applications of recently introduced theoretical
+results.
+</p><!--l. 1--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">2    </span> <a 
+ id="x1-20002"></a>Target Audience, Prerequisites and Learning Goals</h3>
+<!--l. 2--><p class="noindent" >Recent years have seen increasing interest in Relational AI within the KR community. This
+interest is reﬂected in consistent StarAI related events in previous editions of KR, including
+David Poole’s 2020 keynote speech on StarAI, and the tutorial of Braun, Gehrke and Wilhelm
+at KR 2023. In this tutorial, we will bring to attention some foundational problems in StarAI.
+Hence, our tutorial will be of interest to the existing StarAI community at KR. Furthermore,
+our tutorial is also interesting to the community of complexity analysis of reasoning. As it will
+contain a thorough introduction to key ideas behind tractable WFOMC. We believe that this
+tutorial can be attended by anyone with basic knowledge of probability and ﬁrst order
+logic.
+</p><!--l. 4--><p class="indent" >   The attendees will learn about the relation between problems like: model counting and
+probabilistic inference; the complexity of model counting problems; and about fragments of
+ﬁrst order logic that admit tractable WFOMC. The tutorial will guide the audience through
+some of the key combinatorial ideas behind tractable WFOMC. The tutorial will also discuss
+the current state-of-the-art ﬁrst-order model counters, their applications and their
+inefficiencies. The audience will be made aware of both theoretical and practical
+open-problems, whose resolution would lead to eﬃcient probabilistic inference and learning
+in StarAI models.
+</p><!--l. 9--><p class="indent" >   The attendees will also be introduced to the problem of consistency of inference, and the
+recently developed theories of StarAI models that admit consistent parameter estimation. Such
+models, also known as <span 
+class="ptmri8t-">projective models</span>, open up a vast array of new avenues in StarAI, and
+the tutorial will provide the audience with the most recent developments. The audience
+will gain deep understanding of present theoretical models of projectivity and their
+recent applications. Finally, we will also discuss some recent results on domain-size
+generalization of non-projective models, and discuss how simple techniques like parameter
+re-scaling and regularization lead to provably better generalization across domain
+sizes.
+</p><!--l. 1--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">3    </span> <a 
+ id="x1-30003"></a>Tutorial Outline</h3>
+<!--l. 2--><p class="noindent" >The tutorial will be divided into three parts:
+                                                                  
+
+                                                                  
+</p>
+   <h5 class="subsubsectionHead"><a 
+ id="x1-40003"></a>Introduction</h5>
+<!--l. 4--><p class="noindent" >[30 Minutes] We will ﬁrst discuss some background on relational data and probability
+distributions on relational structures. We will formalize a general notion of probabilistic
+inference on relational data, and show how it maps to WFOMC for StarAI models
+like Markov Logic Networks and Problog. We will provide some initial examples,
+where tractability and inconsistency of inference can be major hurdles in real life
+applications.
+</p>
+   <h5 class="subsubsectionHead"><a 
+ id="x1-50003"></a>Tractability</h5>
+<!--l. 8--><p class="noindent" >[60 Minutes] This session will focus on conveying the key recent results in the ﬁeld of
+WFOMC. We will ﬁrst introduce the notion of types and tables in ﬁrst order logic. We will
+then provide a thorough introduction to WFOMC in the universally quantiﬁed fragment of
+ﬁrst order logic with two variables, providing a closed form formula for WFOMC of any
+universally quantiﬁed two-variable formula <span class="cite">[<a 
+href="#XSymmetric_Weighted">17</a>]</span>. We will then extend this result to admit
+existential quantiﬁers using the principle of inclusion-exclusion <span class="cite">[<a 
+href="#Xbroeck2013">18</a>, <a 
+href="#XMalhotraS22">19</a>]</span>. Finally, we will
+extend these results to admit cardinality constraints and counting quantiﬁers <span class="cite">[<a 
+href="#Xkuzelka2020weighted">20</a>]</span>. The
+tutorial will convey key algorithmic and combinatorial ideas <span class="cite">[<a 
+href="#XMalhotraS22">19</a>]</span> that will bring the
+audience a deep understanding of the state-of-the-art WFOMC. We will introduce key
+open problems in this area, ranging from scalability of existing model counters
+<span class="cite">[<a 
+href="#Xpmlr-v161-bremen21a">21</a>]</span> to ﬁne-grain analysis of known (potentially sub-optimal) upper-bounds on
+complexity of WFOMC. Finally, we will give a brief overview of recent results that allow
+for eﬃcient model counting in ﬁrst order logic fragments, with graph-theoretic
+constraints <span class="cite">[<a 
+href="#XLI_Tree">22</a>, <a 
+href="#XMalhotra2023LiftedIB">23</a>]</span>. Such constraints, such as axiomatising a relation to represent a
+tree, forest, a connected graph etc., signiﬁcantly extend the tractable fragment of
+WFOMC.
+</p>
+   <h5 class="subsubsectionHead"><a 
+ id="x1-60003"></a>Consistency</h5>
+<!--l. 10--><p class="noindent" >[60 Minutes] We will begin by introducing recent results <span class="cite">[<a 
+href="#XProjectivity_Rinaldo">24</a>]</span> that have shown that a large
+variety of widely used probabilistic models, encompassing almost all of existing StarAI
+models <span class="cite">[<a 
+href="#XProjectivity_first">25</a>]</span>, do not admit basic <span 
+class="ptmri8t-">consistency </span>requirements expected of sound statistical
+models. The lack of such consistency conditions means that StarAI models do not admit
+consistency of parameter estimation, i.e., as you see more and more data, it is not true that
+your parameters converge to the true value of the model parameters. Such inherent
+inconsistencies in StarAI models make them hard to be used across varying domain sizes <span class="cite">[<a 
+href="#XDA_MLN">26</a>]</span>.
+We will discuss recent theoretical developments in identifying fragments of StarAI models,
+that admit consistency of parameter estimation <span class="cite">[<a 
+href="#XECML_PROJ">27</a>, <a 
+href="#XFelix_Weit">28</a>]</span>. These fragments also admit
+tractable inference in the strongest theoretical sense, as inference complexity is
+independent of the domain size. We will discuss the recently introduced rich theoretical
+framework for projective models <span class="cite">[<a 
+href="#Xijcai2020p591">29</a>]</span>, and the recent developments in their practical
+implementation and applications <span class="cite">[<a 
+href="#Xjaeger2023a">30</a>]</span>. We will especially focus on the vast array of
+                                                                  
+
+                                                                  
+potential applications of these models in problems like reasoning over large scale data
+and random relational structure generation <span class="cite">[<a 
+href="#Xjaeger2023a">30</a>]</span>. Finally, we will look into recent
+developments in understanding generalization properties of StarAI models that do not
+admit consistent parameter estimation <span class="cite">[<a 
+href="#XDA_MLN">26</a>, <a 
+href="#Xchen2024understanding">31</a>]</span>, and how simple regularization and
+re-scaling approaches can lead to provably improved domain-size generalization in
+practice.
+</p><!--l. 12--><p class="indent" >   We will close the session with a discussion on open problems and potential new
+applications in this domain.
+</p><!--l. 14--><p class="noindent" >
+</p>
+   <h3 class="sectionHead"><span class="titlemark">4    </span> <a 
+ id="x1-70004"></a>Presenter Bio</h3>
+<!--l. 15--><p class="noindent" >Sagar Malhotra is a PostDoc at TU Wien, hosted by Prof. Thomas Gärtner. He obtained
+his PhD in 2023 from the university of Trento on “Tractability and Consistency of
+Probabilistic Inference in Relational Domains” under the supervision of Luciano
+Seraﬁni. During his PhD he worked on novel fragments of ﬁrst order logic that admit
+tractable WFOMC <span class="cite">[<a 
+href="#XMalhotraS22">19</a>, <a 
+href="#XMalhotra2023LiftedIB">23</a>]</span>. He also worked on consistency of inference of Markov
+Logic Networks <span class="cite">[<a 
+href="#XECML_PROJ">27</a>]</span>. Recently, he has been interested in quantifying domain-size
+generalization of StarAI models which do not admit consistent parameter estimation
+<span class="cite">[<a 
+href="#Xchen2024understanding">31</a>]</span>.
+</p><!--l. 1--><p class="noindent" >
+</p>
+   <h3 class="likesectionHead"><a 
+ id="x1-80004"></a>References</h3>
+<!--l. 1--><p class="noindent" >
+   </p><div class="thebibliography">
+   <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ptmr8t-x-x-90">1.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XSRL_LISA"></a><span 
+class="ptmr8t-x-x-90">Lise Getoor and Ben Taskar.  </span><span 
+class="ptmri8t-x-x-90">Introduction to Statistical Relational Learning (Adaptive</span>
+   <span 
+class="ptmri8t-x-x-90">Computation and Machine Learning)</span><span 
+class="ptmr8t-x-x-90">. The MIT Press, 2007.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ptmr8t-x-x-90">2.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XSRL_LUC"></a><span 
+class="ptmr8t-x-x-90">Luc</span><span 
+class="ptmr8t-x-x-90"> De  Raedt,  Kristian  Kersting,  Sriraam  Natarajan,  and  David  Poole.    </span><span 
+class="ptmri8t-x-x-90">Statistical</span>
+   <span 
+class="ptmri8t-x-x-90">Relational Artiﬁcial Intelligence: Logic, Probability, and Computation</span><span 
+class="ptmr8t-x-x-90">.  Synthesis Lectures</span>
+   <span 
+class="ptmr8t-x-x-90">on Artiﬁcial Intelligence and Machine Learning. Morgan &#x0026; Claypool Publishers, 2016.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ptmr8t-x-x-90">3.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XProblog"></a><span 
+class="ptmr8t-x-x-90">Luc  De</span><span 
+class="ptmr8t-x-x-90"> Raedt,  Angelika  Kimmig,  and  Hannu  Toivonen.    Problog:  A  probabilistic</span>
+   <span 
+class="ptmr8t-x-x-90">prolog and its application in link discovery.  In </span><span 
+class="ptmri8t-x-x-90">Proceedings of the 20th International Joint</span>
+   <span 
+class="ptmri8t-x-x-90">Conference on Artiﬁcal Intelligence</span><span 
+class="ptmr8t-x-x-90">, IJCAI’07, page 2468–2473, San Francisco, CA, USA,</span>
+   <span 
+class="ptmr8t-x-x-90">2007. Morgan Kaufmann Publishers Inc.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ptmr8t-x-x-90">4.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XBrouard2013-iw"></a><span 
+class="ptmr8t-x-x-90">C</span><span 
+class="ptmr8t-x-x-90">éline  Brouard,  Christel  Vrain,  Julie  Dubois,  David  Castel,  Marie-Anne  Debily,  and</span>
+   <span 
+class="ptmr8t-x-x-90">Florence d’Alch</span><span 
+class="ptmr8t-x-x-90">é Buc.   Learning a markov logic network for supervised gene regulatory</span>
+   <span 
+class="ptmr8t-x-x-90">network inference. </span><span 
+class="ptmri8t-x-x-90">BMC Bioinformatics</span><span 
+class="ptmr8t-x-x-90">, 14:273, September 2013.</span>
+                                                                  
+
+                                                                  
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ptmr8t-x-x-90">5.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xbellomarini2022swift"></a><span 
+class="ptmr8t-x-x-90">Luigi  Bellomarini,  Eleonora  Laurenza,  Emanuel  Sallinger,  and  Evgeny  Sherkhonov.</span>
+   <span 
+class="ptmr8t-x-x-90">Swift markov logic for probabilistic reasoning on knowledge graphs, 2022.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ptmr8t-x-x-90">6.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XNickel2015ARO"></a><span 
+class="ptmr8t-x-x-90">Maximilian Nickel, Kevin</span><span 
+class="ptmr8t-x-x-90"> P. Murphy, Volker Tresp, and Evgeniy Gabrilovich. A review</span>
+   <span 
+class="ptmr8t-x-x-90">of relational machine learning for knowledge graphs.  </span><span 
+class="ptmri8t-x-x-90">Proceedings of the IEEE</span><span 
+class="ptmr8t-x-x-90">, 104:11–33,</span>
+   <span 
+class="ptmr8t-x-x-90">2015.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ptmr8t-x-x-90">7.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xbelle2023statistical"></a><span 
+class="ptmr8t-x-x-90">Vaishak Belle. Statistical relational learning and neuro-symbolic ai: what does ﬁrst-order</span>
+   <span 
+class="ptmr8t-x-x-90">logic oﬀer?, 2023.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ptmr8t-x-x-90">8.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XDeepProblog"></a><span 
+class="ptmr8t-x-x-90">Robin  Manhaeve,  Sebastijan  Dumancic,  Angelika  Kimmig,  Thomas  Demeester,  and</span>
+   <span 
+class="ptmr8t-x-x-90">Luc</span><span 
+class="ptmr8t-x-x-90"> De Raedt. Deepproblog: neural probabilistic logic programming. In </span><span 
+class="ptmri8t-x-x-90">Proceedings of the</span>
+   <span 
+class="ptmri8t-x-x-90">32nd International Conference on Neural Information Processing Systems</span><span 
+class="ptmr8t-x-x-90">, NIPS’18, page</span>
+   <span 
+class="ptmr8t-x-x-90">3753–3763, Red Hook, NY, USA, 2018. Curran Associates Inc.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ptmr8t-x-x-90">9.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xjaeger"></a><span 
+class="ptmr8t-x-x-90">Manfred   Jaeger.         Learning   and   Reasoning   with   Graph   Data:   Neural   and</span>
+   <span 
+class="ptmr8t-x-x-90">Statistical-Relational Approaches.  In Camille Bourgaux, Ana Ozaki, and Rafael Pe</span><span 
+class="ptmr8t-x-x-90">ñaloza,</span>
+   <span 
+class="ptmr8t-x-x-90">editors,  </span><span 
+class="ptmri8t-x-x-90">International  Research  School  in  Artiﬁcial  Intelligence  in  Bergen  (AIB  2022)</span><span 
+class="ptmr8t-x-x-90">,</span>
+   <span 
+class="ptmr8t-x-x-90">volume</span><span 
+class="ptmr8t-x-x-90"> 99  of  </span><span 
+class="ptmri8t-x-x-90">Open  Access  Series  in  Informatics  (OASIcs)</span><span 
+class="ptmr8t-x-x-90">,  pages  5:1–5:42,  Dagstuhl,</span>
+   <span 
+class="ptmr8t-x-x-90">Germany, 2022. Schloss Dagstuhl – Leibniz-Zentrum f</span><span 
+class="ptmr8t-x-x-90">ür Informatik.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">10.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xmarra2020neural"></a><span 
+class="ptmr8t-x-x-90">Giuseppe Marra and Ond</span><span 
+class="ptmr8t-x-x-90">řej Ku</span><span 
+class="ptmr8t-x-x-90">želka. Neural markov logic networks, 2020.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">11.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xmedicine"></a><span 
+class="ptmr8t-x-x-90">Sriraam Natarajan, Kristian Kersting, Tushar Khot, and Jude Shavlik. </span><span 
+class="ptmri8t-x-x-90">Boosted Statistical</span>
+   <span 
+class="ptmri8t-x-x-90">Relational  Learners:  From  Benchmarks  to  Data-Driven  Medicine</span><span 
+class="ptmr8t-x-x-90">.    Springer  Publishing</span>
+   <span 
+class="ptmr8t-x-x-90">Company, Incorporated, 2015.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">12.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xnatarajan2017markov"></a><span 
+class="ptmr8t-x-x-90">Sriraam  Natarajan,  Vishal  Bangera,  Tushar  Khot,  Jose  Picado,  Anurag  Wazalwar,</span>
+   <span 
+class="ptmr8t-x-x-90">Vitor</span><span 
+class="ptmr8t-x-x-90"> Santos Costa, David Page, and Michael Caldwell. Markov logic networks for adverse</span>
+   <span 
+class="ptmr8t-x-x-90">drug event extraction from text. </span><span 
+class="ptmri8t-x-x-90">Knowledge and information systems</span><span 
+class="ptmr8t-x-x-90">, 51:435–457, 2017.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">13.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xsocial"></a><span 
+class="ptmr8t-x-x-90">Haiquan Chen, Wei-Shinn Ku, Haixun Wang, Liang Tang, and Min-Te Sun.  Scaling up</span>
+   <span 
+class="ptmr8t-x-x-90">markov logic probabilistic inference for social graphs.   </span><span 
+class="ptmri8t-x-x-90">IEEE Transactions on Knowledge</span>
+   <span 
+class="ptmri8t-x-x-90">and Data Engineering</span><span 
+class="ptmr8t-x-x-90">, 29(2):433–445, 2017.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">14.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xzhang2014identifying"></a><span 
+class="ptmr8t-x-x-90">Weizhe Zhang, Xiaoqiang Li, Hui He, Xing Wang, et</span><span 
+class="ptmr8t-x-x-90"> al.   Identifying network public</span>
+   <span 
+class="ptmr8t-x-x-90">opinion leaders based on markov logic networks. </span><span 
+class="ptmri8t-x-x-90">The scientiﬁc world journal</span><span 
+class="ptmr8t-x-x-90">, 2014, 2014.</span>
+   </p>
+                                                                  
+
+                                                                  
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">15.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xriedel2009markov"></a><span 
+class="ptmr8t-x-x-90">Sebastian Riedel, Hong-Woo Chun, Toshihisa Takagi, and Jun’ichi Tsujii.   A markov</span>
+   <span 
+class="ptmr8t-x-x-90">logic  approach  to  bio-molecular  event  extraction.    In  </span><span 
+class="ptmri8t-x-x-90">Proceedings  of  the  BioNLP  2009</span>
+   <span 
+class="ptmri8t-x-x-90">Workshop Companion Volume for Shared Task</span><span 
+class="ptmr8t-x-x-90">, pages 41–49, 2009.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">16.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xsakhanenko2010markov"></a><span 
+class="ptmr8t-x-x-90">Nikita</span><span 
+class="ptmr8t-x-x-90"> A  Sakhanenko  and  David</span><span 
+class="ptmr8t-x-x-90"> J  Galas.   Markov  logic  networks  in  the  analysis  of</span>
+   <span 
+class="ptmr8t-x-x-90">genetic data. </span><span 
+class="ptmri8t-x-x-90">Journal of Computational Biology</span><span 
+class="ptmr8t-x-x-90">, 17(11):1491–1508, 2010.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">17.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XSymmetric_Weighted"></a><span 
+class="ptmr8t-x-x-90">Paul Beame, Guy</span><span 
+class="ptmr8t-x-x-90"> Van den Broeck, Eric Gribkoﬀ, and Dan Suciu.  Symmetric weighted</span>
+   <span 
+class="ptmr8t-x-x-90">ﬁrst-order model counting.  In Tova Milo and Diego Calvanese, editors, </span><span 
+class="ptmri8t-x-x-90">Proceedings of the</span>
+   <span 
+class="ptmri8t-x-x-90">34th ACM Symposium on Principles of Database Systems, PODS 2015, Melbourne, Victoria,</span>
+   <span 
+class="ptmri8t-x-x-90">Australia, May 31 - June 4, 2015</span><span 
+class="ptmr8t-x-x-90">, pages 313–328. ACM, 2015.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">18.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xbroeck2013"></a><span 
+class="ptmr8t-x-x-90">Guy</span><span 
+class="ptmr8t-x-x-90"> Van  den  Broeck,  Wannes  Meert,  and  Adnan  Darwiche.      Skolemization  for</span>
+   <span 
+class="ptmr8t-x-x-90">weighted ﬁrst-order model counting.  In Chitta Baral, Giuseppe</span><span 
+class="ptmr8t-x-x-90"> De Giacomo, and Thomas</span>
+   <span 
+class="ptmr8t-x-x-90">Eiter, editors, </span><span 
+class="ptmri8t-x-x-90">Principles of Knowledge Representation and Reasoning: Proceedings of the</span>
+   <span 
+class="ptmri8t-x-x-90">Fourteenth International Conference, KR 2014, Vienna, Austria, July 20-24, 2014</span><span 
+class="ptmr8t-x-x-90">. AAAI</span>
+   <span 
+class="ptmr8t-x-x-90">Press, 2014.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">19.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XMalhotraS22"></a><span 
+class="ptmr8t-x-x-90">Sagar Malhotra and Luciano Seraﬁni. Weighted model counting in FO2 with cardinality</span>
+   <span 
+class="ptmr8t-x-x-90">constraints  and  counting  quantiﬁers:  A  closed  form  formula.      In  </span><span 
+class="ptmri8t-x-x-90">Thirty-Sixth  AAAI</span>
+   <span 
+class="ptmri8t-x-x-90">Conference on Artiﬁcial Intelligence, AAAI 2022, Thirty-Fourth Conference on Innovative</span>
+   <span 
+class="ptmri8t-x-x-90">Applications of Artiﬁcial Intelligence, IAAI 2022, The Twelveth Symposium on Educational</span>
+   <span 
+class="ptmri8t-x-x-90">Advances in Artiﬁcial Intelligence, EAAI 2022 Virtual Event, February 22 - March 1, 2022</span><span 
+class="ptmr8t-x-x-90">,</span>
+   <span 
+class="ptmr8t-x-x-90">pages 5817–5824. AAAI Press, 2022.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">20.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xkuzelka2020weighted"></a><span 
+class="ptmr8t-x-x-90">Ondrej Kuzelka.  Weighted ﬁrst-order model counting in the two-variable fragment with</span>
+   <span 
+class="ptmr8t-x-x-90">counting quantiﬁers. </span><span 
+class="ptmri8t-x-x-90">J. Artif. Intell. Res.</span><span 
+class="ptmr8t-x-x-90">, 70:1281–1307, 2021.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">21.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xpmlr-v161-bremen21a"></a><span 
+class="ptmr8t-x-x-90">Timothy van Bremen and Ond</span><span 
+class="ptmr8t-x-x-90">řej Ku</span><span 
+class="ptmr8t-x-x-90">želka.   Faster lifting for two-variable logic using</span>
+   <span 
+class="ptmr8t-x-x-90">cell  graphs.    In  Cassio  de</span><span 
+class="ptmr8t-x-x-90"> Campos  and  Marloes</span><span 
+class="ptmr8t-x-x-90"> H.  Maathuis,  editors,  </span><span 
+class="ptmri8t-x-x-90">Proceedings  of</span>
+   <span 
+class="ptmri8t-x-x-90">the  Thirty-Seventh  Conference  on  Uncertainty  in  Artiﬁcial  Intelligence</span><span 
+class="ptmr8t-x-x-90">,  volume  161  of</span>
+   <span 
+class="ptmri8t-x-x-90">Proceedings of Machine Learning Research</span><span 
+class="ptmr8t-x-x-90">, pages 1393–1402. PMLR, 27–30 Jul 2021.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">22.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XLI_Tree"></a><span 
+class="ptmr8t-x-x-90">Timothy  van  Bremen  and  Ond</span><span 
+class="ptmr8t-x-x-90">řej  Ku</span><span 
+class="ptmr8t-x-x-90">želka.     Lifted  Inference  with  Tree  Axioms.</span>
+   <span 
+class="ptmr8t-x-x-90">In   </span><span 
+class="ptmri8t-x-x-90">Proceedings   of   the   18th   International   Conference   on   Principles   of   Knowledge</span>
+   <span 
+class="ptmri8t-x-x-90">Representation and Reasoning</span><span 
+class="ptmr8t-x-x-90">, pages 599–608, 11 2021.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">23.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XMalhotra2023LiftedIB"></a><span 
+class="ptmr8t-x-x-90">Sagar  Malhotra,  Davide  Bizzaro,  and  Luciano  Seraﬁni.     Lifted  inference  beyond</span>
+   <span 
+class="ptmr8t-x-x-90">ﬁrst-order logic. </span><span 
+class="ptmri8t-x-x-90">ArXiv</span><span 
+class="ptmr8t-x-x-90">, abs/2308.11738, 2023.</span>
+   </p>
+                                                                  
+
+                                                                  
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">24.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XProjectivity_Rinaldo"></a><span 
+class="ptmr8t-x-x-90">Cosma</span><span 
+class="ptmr8t-x-x-90"> Rohilla  Shalizi  and  Alessandro  Rinaldo.     Consistency  under  sampling  of</span>
+   <span 
+class="ptmr8t-x-x-90">exponential random graph models. </span><span 
+class="ptmri8t-x-x-90">Annals of statistics</span><span 
+class="ptmr8t-x-x-90">, 41 2:508–535, 2013.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">25.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XProjectivity_first"></a><span 
+class="ptmr8t-x-x-90">Manfred Jaeger and Oliver Schulte. Inference, learning, and population size: Projectivity</span>
+   <span 
+class="ptmr8t-x-x-90">for SRL models. </span><span 
+class="ptmri8t-x-x-90">CoRR</span><span 
+class="ptmr8t-x-x-90">, abs/1807.00564, 2018.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">26.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XDA_MLN"></a><span 
+class="ptmr8t-x-x-90">Happy Mittal, Ayush Bhardwaj, Vibhav Gogate, and Parag Singla.  Domain-size aware</span>
+   <span 
+class="ptmr8t-x-x-90">markov logic networks.  In Kamalika Chaudhuri and Masashi Sugiyama, editors, </span><span 
+class="ptmri8t-x-x-90">The 22nd</span>
+   <span 
+class="ptmri8t-x-x-90">International Conference on Artiﬁcial Intelligence and Statistics, AISTATS 2019, 16-18 April</span>
+   <span 
+class="ptmri8t-x-x-90">2019, Naha, Okinawa, Japan</span><span 
+class="ptmr8t-x-x-90">, volume</span><span 
+class="ptmr8t-x-x-90"> 89 of </span><span 
+class="ptmri8t-x-x-90">Proceedings of Machine Learning Research</span><span 
+class="ptmr8t-x-x-90">,</span>
+   <span 
+class="ptmr8t-x-x-90">pages 3216–3224. PMLR, 2019.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">27.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XECML_PROJ"></a><span 
+class="ptmr8t-x-x-90">Sagar Malhotra and Luciano Seraﬁni.   On projectivity in</span><span 
+class="ptmr8t-x-x-90"> markov logic networks.   In</span>
+   <span 
+class="ptmr8t-x-x-90">Massih-Reza  Amini,  St</span><span 
+class="ptmr8t-x-x-90">éphane  Canu,  Asja  Fischer,  Tias  Guns,  Petra  Kralj</span><span 
+class="ptmr8t-x-x-90"> Novak,  and</span>
+   <span 
+class="ptmr8t-x-x-90">Grigorios Tsoumakas, editors, </span><span 
+class="ptmri8t-x-x-90">Machine Learning and Knowledge Discovery in Databases</span><span 
+class="ptmr8t-x-x-90">,</span>
+   <span 
+class="ptmr8t-x-x-90">pages 223–238, Cham, 2023. Springer Nature Switzerland.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">28.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="XFelix_Weit"></a><span 
+class="ptmr8t-x-x-90">Felix</span><span 
+class="ptmr8t-x-x-90"> Q. Weitk</span><span 
+class="ptmr8t-x-x-90">ämper.  An asymptotic analysis of probabilistic logic programming, with</span>
+   <span 
+class="ptmr8t-x-x-90">implications for expressing projective families of distributions. </span><span 
+class="ptmri8t-x-x-90">Theory Pract. Log. Program.</span><span 
+class="ptmr8t-x-x-90">,</span>
+   <span 
+class="ptmr8t-x-x-90">21(6):802–817, 2021.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">29.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xijcai2020p591"></a><span 
+class="ptmr8t-x-x-90">Manfred  Jaeger  and  Oliver  Schulte.    A  complete  characterization  of  projectivity  for</span>
+   <span 
+class="ptmr8t-x-x-90">statistical relational models.  In Christian Bessiere, editor, </span><span 
+class="ptmri8t-x-x-90">Proceedings of the Twenty-Ninth</span>
+   <span 
+class="ptmri8t-x-x-90">International  Joint  Conference  on  Artiﬁcial  Intelligence,  IJCAI-20</span><span 
+class="ptmr8t-x-x-90">,  pages  4283–4290.</span>
+   <span 
+class="ptmr8t-x-x-90">International Joint Conferences on Artiﬁcial Intelligence Organization, 7 2020. Main track.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">30.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xjaeger2023a"></a><span 
+class="ptmr8t-x-x-90">Manfred Jaeger, Antonio Longa, Steve Azzolin, Oliver Schulte, and Andrea Passerini. A</span>
+   <span 
+class="ptmr8t-x-x-90">simple latent variable model for graph learning and inference.  In </span><span 
+class="ptmri8t-x-x-90">The Second Learning on</span>
+   <span 
+class="ptmri8t-x-x-90">Graphs Conference</span><span 
+class="ptmr8t-x-x-90">, 2023.</span>
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+<span 
+class="ptmr8t-x-x-90">31.</span> <span class="bibsp"><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span><span 
+class="ptmr8t-x-x-90"> </span></span></span><a 
+ id="Xchen2024understanding"></a><span 
+class="ptmr8t-x-x-90">Florian  Chen,  Felix  Weitk</span><span 
+class="ptmr8t-x-x-90">ämper,  and  Sagar  Malhotra.    Understanding  domain-size</span>
+   <span 
+class="ptmr8t-x-x-90">generalization in markov logic networks, 2024.</span>
+</p>
+   </div>
+    
+</body></html> 
+
+                                                                  
+
+                                                                  
+                                                                  
+
+

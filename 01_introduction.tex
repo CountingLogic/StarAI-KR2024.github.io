@@ -1,0 +1,32 @@
+% ************************** Thesis Abstract *****************************
+% Use `abstract' as an option in the document class to print only the titlepage and the abstract.
+
+    \textbf{Presenters:} Sagar Malhotra
+    
+    \textbf{Email:} sagar.malhotra@tuwien.ac.at
+    
+    \textbf{Proposed Duration:} Half-Day Tutorial 
+    \textbf{}
+    
+    \section{Introduction}
+    
+    Relational data is characterized by the rich structure it encodes in the dependencies between the individual entities of a given domain. Statistical Relational AI (StarAI) combines first-order logic and probability to learn and reason over relational domains by creating parametric probability distributions over relational structures \cite{SRL_LISA,SRL_LUC}. StarAI models can succinctly represent the complex dependencies in relational data and admit learning and inference under uncertainty. Such expressivity allows for StarAI models to be used in various applications that simultaneously require knowledge representation, learning, reasoning and  uncertainty quantification. These models have been extensively used in domains like social network analysis \cite{Problog}, synthesizing biological networks \cite{Brouard2013-iw} and for various problems on knowledge graphs \cite{bellomarini2022swift,Nickel2015ARO}. Furthermore, many widely used Neuro-Symbolic approaches for integrating neural networks with symbolic methods have been obtained as neural extensions of StarAI models \cite{belle2023statistical,DeepProblog,jaeger,marra2020neural} . A key feature of StarAI models is the inherent interpretability and explainability. These features have lead to significant interest in applying StarAI models to safety critical areas like Healthcare \cite{medicine,natarajan2017markov} and for analyzing complex social \cite{social,zhang2014identifying} and biological systems \cite{riedel2009markov,sakhanenko2010markov}. 
+    
+
+    The need for using StarAI models at scale is consistently rising with the ever-increasing quantities of  relational data. However, StarAI  models are significantly limited when it comes to the \textbf{tractability} of learning and inference. This limitation emerges from the intractability of Weighted First Order Model Counting (WFOMC) \cite{Symmetric_Weighted}, as both learning and inference in many StarAI models can be reduced to instances of WFOMC. Furthermore, fundamental properties expected of sound statistical models, like \textbf{consistency} of parameter estimation, do not hold for StarAI models. 
+
+
+     In this tutorial, we will focus on both tractability and consistency of StarAI models from a foundational perspective. The tutorial will be divided into two focus-topic. First focus-topic will be on tractable WFOMC, where we will discuss the recent developments in the fragments of first order logic that admit tractable WFOMC. In the second focus-topic, we will discuss consistency of parameter estimation and generalization behavior of StarAI models across different domain sizes. The learning goal of the tutorial would be to convey state-of-the-art knowledge of foundations of StarAI models, the existing open-problems, and to motivate further applications of recently introduced theoretical results.
+     
+     % \textcolor{blue}{The tutorial attendees will leave with a deep understanding of recent developments in both the focus topics. They will be ready to attack new open problems in both foundations and applications of StarAI.
+
+    
+    
+    % Hence, fragments of first-order logic that admit tractable WFOMC, widely known as \emph{domain-liftable}, can significantly advance the practicality and efficiency of StarAI models.
+
+    % Recent works have uncovered another limitation of StarAI models, i.e., they lead to unintuitive behaviours when used across varying domain sizes, violating fundamental \textbf{consistency} conditions expected of sound probabilistic models. Such inconsistencies also mean that conventional machine learning techniques, like training with batched data, cannot be soundly used for StarAI models. Furthermore, such inconcistencies raise the question that what can be said about an StarAI model's generalization capabilities when learned on a domain of fixed size and used on a domain of different size.
+
+    
+    
+    % In this thesis, we contribute to both the tractability and consistency of probabilistic inference in StarAI models. We first expand the class of domain-liftable fragments with counting quantifiers and cardinality constraints. Unlike the algorithmic approaches proposed in the literature, we present a uniform combinatorial approach, admitting analytical combinatorial formulas for WFOMC. Our approach motivates a new family of weight functions allowing us to express a larger class of probability distributions without losing domain-liftability. We further expand the class of domain-liftable fragments with constraints inexpressible in first-order logic, namely \emph{acyclicity} and \emph{connectivity} constraints. Finally, we present a complete  characterization for a 
+    % statistically consistent (a.k.a projective) models in the two-variable fragment of a widely used class of  StarAI models, namely Markov Logic Networks.

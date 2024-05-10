@@ -1,0 +1,99 @@
+\section*{Appendix}
+\subsection*{ A.1 : Lemma \ref{lem: neccesity} [Necessary]}
+In this section we will make the last steps in the proof of lemma \ref{lem: neccesity} more rigorous. In the lemma we argue that, for any choice of the domain size $m$ and for any choice of $m$-worlds $(\x,\y)$ and $(\x',\y')$, we have that:
+  \begin{align}
+    \label{eq: lemma_2_condition}
+    \sum_{i\in [u]}s_i \prod_{j\in[u]}f_{ij}^{k_{j}(\bx)} &= \sum_{i\in [u]}s_i \prod_{j\in[u]}f_{ij}^{k_{j}(\bx')} 
+  \end{align}
+This implies that:
+\begin{equation}
+    \label{eq: lem_2_conclusion}
+      \forall i,j,i',j'\in [u]: f_{ij} =  f_{i'j'}  
+\end{equation}
+We will first infer a slightly stricter equation from \eqref{eq: lemma_2_condition}.
+Since, $f_{ij} = f_{ji}$, we can see $\{f_{ij}\}$ as a symmetric $u \times u$ matrix in $\mathbb{R}_{>0}^{u\times u}$. Furthermore, $\x$ and $\x'$ can have any
+1-type cardinalities $\bk = \langle k_1 ... k_u\rangle$ and $\bk'= \langle k'_1 ... k'_u\rangle$ respectively, such that $\sum_{i\in [u]}k_i = \sum_{i\in [u]}k'_i = m$. Hence, we can conclude that, for all $\bk$ and $ \bk'$ such that $\sum_{i\in [u]}k_i = \sum_{i\in [u]}k'_i$, we have that:
+\begin{align}
+    \label{eq: lemma_2_condition_2}
+    \sum_{i\in [u]}s_i \prod_{j\in[u]}f_{ij}^{k_j} &= \sum_{i\in [u]}s_i \prod_{j\in[u]}f_{ij}^{k'_{j}} 
+  \end{align}
+Hence, our goal is to prove that \eqref{eq: lemma_2_condition_2} implies \eqref{eq: lem_2_conclusion}. We formally prove this statement in Lemma \ref{lemma_2}. Before proving Lemma \ref{lemma_2}, we will need to prove the following 
+auxiliary lemma. 
+\begin{lemma}
+    \label{lemma_1}
+  Let $(x_i)^{m}_{i=1}$,$(y_i)^{m}_{i=1}$ and $(a_i)^{m}_{i=1}$ be tuples of positive non-zero reals. If for all positive integers $n$: 
+    \begin{equation}
+      \label{eq: lemma_1}
+     \sum_{i=1}^{m}a_ix_i^{n} = \sum_{i=1}^{m}a_iy_i^{n}
+    \end{equation}
+  then the set of entries in $(x_i)^{m}_{i=1}$ and the set of entries in $(y_i)^{m}_{i=1}$ are the same. 
+  \end{lemma}
+  % \begin{proof}
+  %   Let us assume to the contrary that $\sum_{i=1}^{m}x_i > \sum_{i=1}^{m}y_i$. Let $x_{l}$ and $y_{l'}$ be the maximal elements in $\{x_i\}^{m}_{i=1}$ and $\{y_i\}^{m}_{i=1}$ respectivaly.
+  %   Since,  $\sum_{i=1}^{m}x_i > \sum_{i=1}^{m}y_i$, we have that $x_{l} > y_{l'}$. 
+    
+  %   But as $n$ tends to infinity, due to \eqref{eq: lemma_1}, we must have that $a_lx_l^{n} = a_{l'}y_{l'}^{n} $, which is true only if $x_l = y_{l'}$, which contradicts our assumption that $$
+  % \end{proof}
+  \begin{proof}Let $\{u_{i}\}^{p}_{i=1}$ and  $\{v_{i}\}^{q}_{i=1}$ be the set of unique entries in $(x_i)^{m}_{i=1}$ and $(y_i)^{m}_{i=1}$ respectively. Also, without loss of generality, we may assume an ordering such that $u_1 > u_2> ... >u_{p} $ and $v_1 > v_2> ...>v_{q} $ and also that $q\geq p $. We can rewrite \eqref{eq: lemma_1} as:
+  \begin{equation}
+    \label{eq: lemma_1_equivalence}
+   \forall n \in \mathbb{Z^{+}}:  \sum_{i=1}^{p}c_iu_i^{n} = \sum_{i=1}^{q}d_iv_i^{n} 
+  \end{equation}
+  As $n$ grows the leading term on LHS is $c_1u_{1}^{n}$ and on the RHS is $d_1v_{1}^{n}$. Hence, it must be :
+  
+  \begin{equation*}
+    \forall n \in \mathbb{Z^{+}}: c_1 u_{1}^{n}  = d_1 v_{1}^{n} 
+  \end{equation*}
+  Since, $u_1,v_1,c_1$ and $d_1$ are non-zero positive reals, we can conclude that $u_1=v_1$ and $c_1 = d_1$. Hence, we may subtract $c_1 u_{1}^{n}$ from both sides in \eqref{eq: lemma_1_equivalence} to get :
+  \begin{equation}
+    \label{eq: lemma_1_equivalence_1}
+   \forall n \in \mathbb{Z^{+}}:  \sum_{i=2}^{m'}c_iu_i^{n} = \sum_{i=2}^{m''}d_iv_i^{n} 
+  \end{equation}
+  We may now repeat the aforementioned argument and infer that $u_2=v_2$ and $c_2 = d_2$. Furthermore, repeating this argument $p$ times, we can infer that $\{u_i\}^{p}_{i=1} = \{v_i\}^{p}_{i=1}$, leaving us with $0 =\sum_{i=q-p+1}^{p}d_iv_i^{n}$, which is a contradiction, hence, $p=q$. Hence, we have that $\{u_{i}\}^{p}_{i=1}$ = $\{v_{i}\}^{q}_{i=1}$. Hence, completing the proof.
+  \end{proof}
+  
+  
+  \begin{lemma}
+    \label{lemma_2}
+  Let $F = (f_{ij}) \in \mathbb{R}_{>0}^{u \times u}$ be a symmetric matrix and let $(s_i)^{u}_{i=1} \in \mathbb{R}_{>0}^{u}$. If for all $\bm{k} = \langle k_1,...,k_u \rangle$ and $\bm{k'} = \langle k'_1,...,k'_u \rangle $ such that $k_i,k'_i \in \mathbb{Z^{+}}$ and $\sum_{i=1}^{u}k_i = \sum_{i=1}^{u}k'_i$, we have that: 
+    \begin{equation}
+      \label{eq: lemma_2}
+  \sum_{i=1}^{u}s_i\prod_{j\in [u]}f_{ij}^{k_{j}} = \sum_{i=1}^{u}s_i\prod_{j\in [u]}f_{ij}^{k'_{j}}
+    \end{equation}
+  then 
+  \begin{equation*}
+    \forall i,j,i',j' : f_{ij} = f_{i'j'}
+  \end{equation*}
+  \end{lemma}
+  
+  \begin{proof}
+  Let $\bm{k}$ be such that $k_p=n$, let $k_i = 0$ for all $i \neq p$. Let $\bm{k'}$ be such  that $k_q=n$ and $k_i = 0$ for all $i \neq q$. Then due to \eqref{eq: lemma_2}, we have that:
+  
+  \begin{equation}
+  \forall n \in \mathbb{Z^{+}}: \sum_{i=1}^{u}s_i(f_{ip})^{n} = \sum_{i=1}^{u}s_i(f_{iq})^{n}
+  \end{equation} 
+  Hence, due to Lemma \ref{lemma_1}, we have that the entries in $(f_{ip})^{u}_{i=1}$ and $(f_{iq})^{u}_{i=1}$ form the same set. A similar argument can 
+  be repeated for any pair of columns. Hence, all columns in $F$ have the same set of entries, we denote the set of such entries as $U$. 
+  
+  Now, let $n = uk$ where $k \in \mathbb{Z}^{+}$, and $\bm{k}$ such that $k_i=k$ for all $i \in [u]$ and $\bm{k'}$ such that $k'_q=n$ and $k'_i = 0$ for all $i \neq q$. Then due to \eqref{eq: lemma_2}, we have that:
+  \begin{align*}
+    \forall k \in \mathbb{Z^{+}}: \sum_{i=1}^{u} s_i \prod_{p\in[u]}f_{ip}^{k} &= \sum_{i=1}^{u}s_i(f_{iq})^{uk}\\
+    \forall k \in \mathbb{Z^{+}}: \sum_{i=1}^{u} s_i \bigl(\prod_{p\in[u]}f_{ip}\bigr)^{k} &= \sum_{i=1}^{u}s_i (f_{iq}^{u}\bigr)^{k}
+  \end{align*} 
+  As $k$ grows the leading term on left hand side and right hand side must agree for the equality to hold. Let $c_{i'} \bigl(\prod_{p\in[u]}f_{i'p}\bigr)^{k}$ and $d_{i''} (f_{i''q}^{u}\bigr)^{k}$ be the leading terms on RHS and LHS respectively.
+  Hence,
+  \begin{equation}
+    \label{eq: compare_uni_edge}
+    \forall k \in \mathbb{Z^{+}} : c_{i'} \bigl(\prod_{p\in[u]}f_{i'p}\bigr)^{k} = d_{i''} (f_{i''q}^{u}\bigr)^{k} 
+  \end{equation}
+  which implies that $\prod_{p\in[u]}f_{i'p} = f_{i''q}^{u}$. Now, clearly $f_{i''q}$ is equal to the maximum term in $U$ say $s$. Now, $\prod_{p\in[u]}f_{i'p}$ is a product of all  the terms in 
+  the $p^{th}$ matrix column of $F$. Hence, $\prod_{p\in[u]}f_{i'p} \leq s^{u}$. Hence, due to \eqref{eq: compare_uni_edge}, we have that:
+  
+  \begin{equation*}
+    \forall i,j,i',j' : f_{ij} = f_{i'j'}
+  \end{equation*} 
+  \end{proof}
+  
+  
+  
+ 
