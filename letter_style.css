@@ -1,4 +1,4 @@
 .text {width: 40em; text-align: left; margin: 0 auto;}
 .left {text-align: left;}
-.listing {width: 40em; text-align: center; margin: 0 auto;}
-.footer {width: 34em; text-align: center; margin: 0 auto;}
+.listing {width: 40em; text-align: left; margin: 0 auto;}
+.footer {width: 34em; text-align: left; margin: 0 auto;}
